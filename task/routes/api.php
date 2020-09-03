@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/v1/document/{id}','DocumentController@show');
 Route::post('/v1/document','DocumentController@store');
+Route::put('/v1/document/{document}','DocumentController@update');

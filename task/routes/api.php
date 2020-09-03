@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Document;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/v1/document/{id}','DocumentController@show');
+Route::post('/v1/document','DocumentController@store');

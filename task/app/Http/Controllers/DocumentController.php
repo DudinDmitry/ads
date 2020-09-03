@@ -12,9 +12,10 @@ class DocumentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request,$id)
     {
-        //
+        $request->headers->set('Accept', 'application/json');
+        return Document::find($id);
     }
 
     /**
@@ -35,18 +36,21 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $document = Document::create($request->all());
+
+        return response()->json($document, 201);
     }
 
     /**
      * Display the specified resource.
-     *
+     * Возвращает документ по ID
      * @param  \App\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function show(Document $document)
+    public function show(Document $document,$id)
     {
-        //
+        return Document::find($id);
+
     }
 
     /**

@@ -73,7 +73,17 @@ class DocumentController extends Controller
      */
     public function update(Request $request, Document $document)
     {
-        //
+        /*
+        $documentNew = Document::findOrFail($id);
+        $documentNew->update($request->all());
+
+        return $documentNew;
+        */
+
+        $document->update($request->all());
+
+        return response()->json($document, 200);
+
     }
 
     /**

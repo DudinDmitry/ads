@@ -7,6 +7,10 @@ use Illuminate\Support\Str;
 
 class Document extends Model
 {
+    protected $guarded=[];
+    protected $casts = [
+        'options' => 'json',
+    ];
     protected static function boot()
     {
         parent::boot();
